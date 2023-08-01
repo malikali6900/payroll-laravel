@@ -48,3 +48,7 @@ Route::get('/register', function () {
 Route::get('/tables', function () {
     return view('tables');
 });
+
+Route::get('/forget-password', function () {
+    return view('forget-password');
+});
