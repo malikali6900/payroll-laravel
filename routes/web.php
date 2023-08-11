@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\SuperAdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +16,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/', [LoginController::class, 'login']);
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+// Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+
+Route::get('/user-register', [LoginController::class, 'showRegisterForm'])->name('register');
+Route::post('/user-register', [LoginController::class, 'register']);
+
+// this page show to only super admin not other roles
+
+Route::get('/forgot-password', function () {
+    if (Auth::check() && Auth::user()->role === 'super_admin') {
+        return view('forgot-password');
+    } else {
+        return view('404');
+    }
+})->name('forgot-password')->middleware('auth');
+
+/////////////////////////////////////////////////////
+
+Route::get('/user-register', function () {
+    return view('register');
 });
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::fallback(function () {
     return view('404');
@@ -23,6 +53,10 @@ Route::fallback(function () {
 
 Route::get('/blank', function () {
     return view('blank');
+});
+
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 
 Route::get('/buttons', function () {
@@ -41,14 +75,8 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/register', function () {
-    return view('register');
-});
+
 
 Route::get('/tables', function () {
     return view('tables');
-});
-
-Route::get('/forget-password', function () {
-    return view('forget-password');
 });

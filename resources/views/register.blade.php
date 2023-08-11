@@ -36,34 +36,64 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <form action="{{ url('/user-register') }}" class="user" method="POST">
+                                    @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
+                                            placeholder="First Name" value="{{old('name')}}" name="name">
+                                            <span class="text-danger">
+                                                @error('name')
+                                                    {{$message}}
+                                                @enderror
+                                            </span>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
+                                            placeholder="Last Name" value="{{old('last_name')}}" name="last_name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                        placeholder="Email Address" value="{{old('email')}}" name="email">
+                                        <span class="text-danger">
+                                            @error('email')
+                                                {{$message}}
+                                            @enderror
+                                        </span>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            id="exampleInputPassword" placeholder="Password" name="password">
+                                            <span class="text-danger">
+                                                @error('password')
+                                                    {{$message}}
+                                                @enderror
+                                            </span>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            id="exampleRepeatPassword" placeholder="Repeat Password" name="password_confirmation">
+                                            <span class="text-danger">
+                                                    @error('password_confirmation')
+                                                        {{$message}}
+                                                    @enderror
+                                                </span>
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="user_role"
+                                    placeholder="Role" value="{{old('role')}}" name="role">
+                                    <span class="text-danger">
+                                        @error('role')
+                                            {{$message}}
+                                        @enderror
+                                    </span>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Register Account
-                                </a>
+                                </button>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google

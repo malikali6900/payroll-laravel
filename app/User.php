@@ -1,10 +1,13 @@
 <?php
 
 namespace App;
+// namespace App\Http\Controllers\Auth;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+
 
 class User extends Authenticatable
 {
@@ -15,10 +18,13 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // protected $fillable = 'users';
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role',
     ];
-
+    protected $attributes = [
+        'name' => '', // Add default value for the 'name' field
+    ];
     /**
      * The attributes that should be hidden for arrays.
      *
