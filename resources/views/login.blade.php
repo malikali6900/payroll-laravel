@@ -62,7 +62,7 @@
                       <fieldset>
                         <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address..." name="email" value="{{old('email')}}">
+                                                placeholder="Enter Email Address..." name="email" value="{{old('email')}}" autocomplete="off">
                                                 <span class="text-danger">
                                                     @error('email')
                                                         {{$message}}
