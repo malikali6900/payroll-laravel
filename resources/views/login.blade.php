@@ -19,37 +19,48 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ asset('fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home-template.css') }}">
+    {{-- <link rel="stylesheet" href="assets/css/owl.css"> --}}
+    <link rel="stylesheet" href="{{ asset('css/home-animation.css') }}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
 </head>
 
 <body class="bg-gradient-primary">
-
-    <div class="container">
-
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    @if ($errors->has('invalid'))
-                                        <div class="alert alert-danger">
-                                            {{ $errors->first('invalid') }}
-                                        </div>
-                                    @endif
-                                    <form action="{{ url('/') }}" class="user" method="POST">
-                                        @csrf
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+    <div class="contact-us section" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6  align-self-center">
+              <div class="section-heading">
+                <h6>Contact Us</h6>
+                <h2>Feel free to contact us anytime</h2>
+                <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
+                <div class="special-offer">
+                  <span class="offer">off<br><em>50%</em></span>
+                  <h6>Valide: <em>24 April 2036</em></h6>
+                  <h4>Special Offer <em>50%</em> OFF!</h4>
+                  <a href="#"><i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="contact-us-content">
+                @if ($errors->has('invalid'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('invalid') }}
+                    </div>
+                @endif
+                <form action="{{ url('/') }}" class="user" method="POST" id="contact-form">
+                    @csrf
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address..." name="email" value="{{old('email')}}">
                                                 <span class="text-danger">
@@ -57,59 +68,45 @@
                                                         {{$message}}
                                                     @enderror
                                                 </span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                        {{-- <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required> --}}
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password" name="password" value="">
                                                 <span class="text-danger">
                                                     @error('password')
                                                         {{$message}}
                                                     @enderror
                                                 </span>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </button>
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                        {{-- <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required=""> --}}
+                      </fieldset>
+                      <div class="mb-4">
+                        <a class="small text-white" href="{{ route('forgot-password') }}">Forgot Password?</a>
+                    </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="orange-button">Login Now</button>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                        <hr class="mt-4 text-white">
+                                        <a href="index.html" class="btn btn-google btn-user btn-block text-white">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
                                         </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                        <a href="index.html" class="btn btn-facebook btn-user btn-block text-white">
                                             <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                         </a>
-                                    </form>
-                                    {{-- @if(session('status'))
-    <script>
-        window.onload = function() {
-            alert("{{ session('status') }}");
-        };
-    </script>
-@endif --}}
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-
+                  </div>
+                </form>
+              </div>
             </div>
-
+          </div>
         </div>
-
-    </div>
+      </div>
     <div>
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -132,6 +129,31 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
+    {{-- <script>
+        window.onbeforeunload = function () {
+            if ({{ Auth::check() ? 'true' : 'false' }} && window.location.pathname === '/tables') {
+                return 'Are you sure you want to log out?';
+            }
+        };
+    </script> --}}
+    
+    <script>
+        $(document).ready(function () {
+            // Check if the user is authenticated and on the login page
+            if ({{ Auth::check() ? 'true' : 'false' }} && window.location.pathname === '/login') {
+                // Redirect to the tables page
+                window.location.href = '/tables';
+            }
+    
+            // Disable caching of the login page to prevent going back
+            if (window.location.pathname === '/login') {
+                window.history.pushState(null, null, window.location.href);
+                window.addEventListener('popstate', function () {
+                    window.history.pushState(null, null, window.location.href);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

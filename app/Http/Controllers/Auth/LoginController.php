@@ -14,9 +14,8 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         if (Auth::check()) {
-            // User is already authenticated, show alert and log them out
-            Auth::logout();
-            return redirect('/login')->with('status', 'You will be logged out to login again.');
+            // User is already authenticated, redirect to tables page
+            return redirect('/index');
         }
     
         return view('login');
@@ -34,12 +33,12 @@ class LoginController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            // Authentication successful
-            return redirect('/tables'); // Replace '/dashboard' with the desired destination URL after successful login
+        if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+            // Authentication successful, redirect to the tables page
+            return redirect('/index');
         } else {
-            // Authentication failed
-            return back()->withErrors(['invalid' => 'The email and password do not match. Please try again.']);
+            // Authentication failed, redirect back with errors
+            return redirect()->back()->withErrors(['message' => 'Invalid credentials']);
         }
     }
 
@@ -74,7 +73,7 @@ class LoginController extends Controller
 
             if (Auth::attempt($request->only('email','password'))) {
             // Authentication passed
-            return redirect('/tables'); // Replace '/dashboard' with the desired destination URL after successful login
+            return redirect('/index'); // Replace '/dashboard' with the desired destination URL after successful login
             } else {
                 // Authentication failed
                 return back()->withErrors(['message' => 'Invalid credentials']);
