@@ -26,12 +26,12 @@
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
-                    <div class="search-input">
+                    {{-- <div class="search-input">
                       <form id="search" action="#">
                         <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
                         <i class="fa fa-search"></i>
                       </form>
-                    </div>
+                    </div> --}}
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
@@ -61,46 +61,46 @@
             <div class="item item-1">
               <div class="header-text">
                 <span class="category">Our Courses</span>
-                <h2>With Scholar Teachers, Everything Is Easier</h2>
-                <p>Scholar is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
-                <div class="buttons">
+                <h2>With Our Teachers, Everything Is Easier</h2>
+                <p>We operate with a structured yet flexible approach.Enroll in a course, access our platform, progress at your own pace, engage in coding exercises and projects, seek guidance from instructors and fellow students, and achieve your programming goals affordably and efficiently.</p>
+                {{-- <div class="buttons">
                   <div class="main-button">
                     <a href="#">Request Demo</a>
                   </div>
                   <div class="icon-button">
                     <a href="#"><i class="fa fa-play"></i> What's Scholar?</a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
             <div class="item item-2">
               <div class="header-text">
                 <span class="category">Best Result</span>
                 <h2>Get the best result out of your effort</h2>
-                <p>You are allowed to use this template for any educational or commercial purpose. You are not allowed to re-distribute the template ZIP file on any other website.</p>
-                <div class="buttons">
+                <p>Dive into our interactive lessons, coding exercises, and projects on our platform. Reach out to our support team and connect with fellow students for guidance and collaboration.</p>
+                {{-- <div class="buttons">
                   <div class="main-button">
                     <a href="#">Request Demo</a>
                   </div>
                   <div class="icon-button">
                     <a href="#"><i class="fa fa-play"></i> What's the best result?</a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
             <div class="item item-3">
               <div class="header-text">
                 <span class="category">Online Learning</span>
                 <h2>Online Learning helps you save the time</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporious incididunt ut labore et dolore magna aliqua suspendisse.</p>
-                <div class="buttons">
+                <p>Our expert instructors, up-to-date content, interactive learning, and strong student support ensure an exceptional learning experience.</p>
+                {{-- <div class="buttons">
                   <div class="main-button">
                     <a href="#">Request Demo</a>
                   </div>
                   <div class="icon-button">
                     <a href="#"><i class="fa fa-play"></i> What's Online Course?</a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@
             </div>
             <div class="main-content">
               <h4>Online Degrees</h4>
-              <p>Whenever you need free templates in HTML CSS, you just remember TemplateMo website.</p>
+              <p>Advance your career with our accredited online degree programs.</p>
               <div class="main-button">
                 <a href="#">Read More</a>
               </div>
@@ -133,7 +133,7 @@
             </div>
             <div class="main-content">
               <h4>Short Courses</h4>
-              <p>You can browse free templates based on different tags such as digital marketing, etc.</p>
+              <p>Discover our diverse range of short courses designed to enhance your skills and knowledge quickly.</p>
               <div class="main-button">
                 <a href="#">Read More</a>
               </div>
@@ -147,7 +147,7 @@
             </div>
             <div class="main-content">
               <h4>Web Experts</h4>
-              <p>You can start learning HTML CSS by modifying free templates from our website too.</p>
+              <p>Our dedicated expert team is available around the clock to assist you with any questions or challenges.</p>
               <div class="main-button">
                 <a href="#">Read More</a>
               </div>
@@ -171,7 +171,7 @@
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                  Begin your journey at our academy by selecting a course that matches your goals. Dive into our <strong>interactive lessons, coding exercises, and projects</strong>on our platform. Reach out to our support team and connect with fellow students for guidance and collaboration. Your programming education starts here, and we're here to help you succeed.
                 </div>
               </div>
             </div>
@@ -183,19 +183,19 @@
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                  We operate with a structured yet flexible approach. Enroll in a course, access our platform, progress at your own pace,<strong>engage in coding exercises and projects, seek guidance from instructors and fellow students,</strong>and achieve your programming goals affordably and efficiently.
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Why SCHOLAR is the best?
+                  Why GIGA Creatives is the best?
                 </button>
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="accordion-body">
-                  There are more than one hundred responsive HTML templates to choose from <strong>Template</strong>Mo website. You can browse by different tags or categories.
+                  We excel because of our commitment to delivering the finest online programming education. Our <strong>expert instructors, up-to-date content, interactive learning, and strong student support</strong> ensure an exceptional learning experience. We prioritize affordability, inclusivity, and continuous improvement, making us the best choice for aspiring programmers.
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@
               </h2>
               <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                 <div class="accordion-body">
-                  You can also search on Google with specific keywords such as <code>templatemo business templates, templatemo gallery templates, admin dashboard templatemo, 3-column templatemo, etc.</code>
+                  Absolutely! We pride ourselves on providing the best support in the industry. Our dedicated support team is available around the clock to assist you with any questions or challenges you may encounter during your learning journey. Whether you need technical assistance or academic guidance, we're here to ensure your success every step of the way.
                 </div>
               </div>
             </div>
@@ -217,7 +217,7 @@
           <div class="section-heading">
             <h6>About Us</h6>
             <h2>What make us the best academy online?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.</p>
+            <p>Our online programming academy excels as the best due to expert-led, up-to-date courses, hands-on learning, 24/7 support, vibrant student community, affordability, accessibility, proven results, and an unwavering commitment to improvement.</p>
             <div class="main-button">
               <a href="#">Discover More</a>
             </div>
@@ -440,23 +440,23 @@
         <div class="col-lg-7">
           <div class="owl-carousel owl-testimonials">
             <div class="item">
-              <p>“Please tell your friends or collegues about TemplateMo website. Anyone can access the website to download free templates. Thank you for visiting.”</p>
+              <p>“Working at Giga Creatives has been an incredible journey. The company's commitment to innovation and its diverse portfolio of IT technologies have provided me with continuous opportunities for growth. The supportive work culture and collaborative team spirit make every day here a rewarding experience.”</p>
               <div class="author">
-                <img src="{{ asset('img/testimonial-author.jpg') }}" alt="">
+                <img src="{{ asset('img/testimonial-author1.png') }}" alt="">
                 <span class="category">Full Stack Master</span>
                 <h4>Claude David</h4>
               </div>
             </div>
             <div class="item">
-              <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid.”</p>
+              <p>“I'm proud to be part of the Giga Creatives team. This company truly values its employees, fostering a culture of learning and professional development. The challenging projects we work on keep me engaged and motivated, and the management's emphasis on work-life balance ensures a healthy and productive work environment.”</p>
               <div class="author">
-                <img src="{{ asset('img/testimonial-author.jpg') }}" alt="">
+                <img src="{{ asset('img/testimonial-author2.jpeg') }}" alt="">
                 <span class="category">UI Expert</span>
                 <h4>Thomas Jefferson</h4>
               </div>
             </div>
             <div class="item">
-              <p>“Scholar is free website template provided by TemplateMo for educational related websites. This CSS layout is based on Bootstrap v5.3.0 framework.”</p>
+              <p>“Giga Creatives is not just a workplace; it's a place to thrive. The dynamic and creative atmosphere here fuels my passion for IT technologies. The management team is attentive to employees' needs, and the opportunities for skill enhancement are boundless. It's a company that values its people and their contributions”</p>
               <div class="author">
                 <img src="{{ asset('img/testimonial-author.jpg') }}" alt="">
                 <span class="category">Digital Animator</span>
@@ -469,7 +469,7 @@
           <div class="section-heading">
             <h6>TESTIMONIALS</h6>
             <h2>What they say about us?</h2>
-            <p>You can search free CSS templates on Google using different keywords such as templatemo portfolio, templatemo gallery, templatemo blue color, etc.</p>
+            <p>The exposure to a wide array of IT technologies and the freedom to explore my interests have been remarkable. The company's dedication to fostering a culture of innovation and inclusivity has created a unique and inspiring workplace.</p>
           </div>
         </div>
       </div>
