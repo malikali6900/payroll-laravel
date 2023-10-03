@@ -1703,10 +1703,13 @@ Testimonials Style
 }
 
 .testimonials .item img {
-  border-radius: 50%;
+  border-radius: 100%;
   max-width: 100px;
   float: left;
   margin-right: 25px;
+  min-height: 100px !important;
+  max-height: 100px !important;
+  object-fit: cover;
 }
 
 .testimonials .item span {
