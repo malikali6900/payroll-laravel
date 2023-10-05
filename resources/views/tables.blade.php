@@ -32,7 +32,7 @@
 
         <!-- Sidebar -->
 
-        @component('components.admin-dashboard')
+        @component('components.employe-dashboard')
         @endcomponent
     
         <!-- End of Sidebar -->

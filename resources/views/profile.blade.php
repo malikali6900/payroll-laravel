@@ -27,7 +27,48 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    
+                    <div class="row my-5 py-5">
+                        <div class="col-6">
+                            <div class="profile-img d-flex align-items-center justify-content-center mb-5">
+                                @if (auth()->user()->user_img)
+                                <img src="{{ asset('storage/' . auth()->user()->user_img) }}" alt="User Image">
+                                @else
+                                <img src="{{ asset('img/undraw_profile.svg') }}" alt="Placeholder Image">
+                                {{-- <img src="img/undraw_profile.svg" alt="" width="300px"> --}}
+                                @endif
+                            </div>
+                            <form class="text-center upload-img-form" action="{{ route('upload-image') }}" method="POST" enctype="multipart/form-data">
+                                <p>Upload/Change Profile Picture</p>
+                                @csrf
+                                <input type="file" name="user_img" class="demo1">
+                                <button type="submit" class="btn btn-primary theme-btn mt-4">Upload Image</button>
+                            </form>
+                        </div>
+                        <div class="col-6 form-main">
+                            @if (Auth::check() && Auth::user()->name !== '')
+                            <form action="{{ route('update-profile') }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="fullName">Your Name</label>
+                                    <input type="text" class="form-control" id="fullName" name="name" placeholder="Name" value="{{ Auth::user()->name }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email address"  value="{{ Auth::user()->email }}" readonly class="focus-none">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Reset Password</label>
+                                    <input type="password" class="form-control" id="reset-password" name="password" placeholder="Reset Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Confirm Password</label>
+                                    <input type="password" class="form-control" id="reset-password-confirm" name="password_confirmation" placeholder="Confirm Password">
+                                </div>
+                                <button type="submit" class="btn-lg btn btn-primary theme-btn">Save Change</button>
+                            </form>
+                            @endif
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->

@@ -55,7 +55,12 @@ Route::middleware(['auth'])->group(function () {
         return redirect('/');
     })->name('logout');
 });
-
+// For Image Upload 
+Route::post('/upload-image', 'ImageController@upload')->name('upload-image');
+// For Image Update
+Route::post('/update-image', 'ImageController@updateImage')->name('update-image');
+// For Profile Update
+Route::post('/update-profile', 'ProfileController@updateProfile')->name('update-profile');
 
 Route::get('/', function () {
     return view('home');

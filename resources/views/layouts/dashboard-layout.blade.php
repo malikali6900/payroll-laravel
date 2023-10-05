@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{ asset('fontawesome-free/css/all.min.css') }}">
     <!-- Custom styles for this template-->
@@ -68,15 +69,8 @@
      <!-- Page level custom scripts -->
      <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
      <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+     {{-- Custom Script --}}
+     <script src="{{ asset('js/custom-plugins.js') }}"></script>
 
-	{{-- <script>
-		@if(Session::has('success'))
-			toastr.success("{{ Session::get('success')}}")		
-		@endif
-		
-		@if(Session::has('info'))
-			toastr.info("{{ Session::get('info')}}")		
-		@endif	
-	</script> --}}
 </body>
 </html>
