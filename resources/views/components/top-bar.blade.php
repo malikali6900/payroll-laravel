@@ -176,8 +176,12 @@
                 @else
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Hello, User</span>
                 @endif
-                <img class="img-profile rounded-circle"
-                    src="img/undraw_profile.svg">
+                @if (auth()->user()->user_img)
+                                <img src="{{ asset('storage/' . auth()->user()->user_img) }}" alt="User Image" class="img-profile rounded-circle object-fit-cover">
+                                @else
+                                <img src="{{ asset('img/undraw_profile.svg') }}" alt="Placeholder Image" class="img-profile rounded-circle object-fit-cover">
+                                {{-- <img src="img/undraw_profile.svg" alt="" width="300px"> --}}
+                                @endif
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

@@ -22,7 +22,7 @@
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="/" class="logo">
-                      <img src="{{ asset('img/logo.svg') }}" alt="Logo">
+                      <img src="{{ asset('img/logo-white.svg') }}" alt="Logo">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->

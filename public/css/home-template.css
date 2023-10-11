@@ -284,7 +284,8 @@ Header Style
 
 .header-area .main-nav {
   background: transparent;
-  display: flex
+  display: flex;
+  align-items: center;
 }
 
 .header-area .main-nav .logo {
@@ -293,6 +294,7 @@ Header Style
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   display: inline-block;
+  width: 200px;
 }
 
 .header-area .main-nav .logo h1 {
@@ -307,7 +309,7 @@ Header Style
 
 .background-header .main-nav .logo,
 .background-header .main-nav #search {
-  margin-top: 18px;
+  margin-top: 0;
 }
 
 .header-area .main-nav #search {
@@ -379,13 +381,6 @@ Header Style
   transition: all 0.4s ease 0s;
   border: transparent;
   letter-spacing: .25px;
-}
-
-.background-header .main-nav .nav {margin-top: 20px;}
-
-.background-header .main-nav .nav li {
-  height: 80px;
-  line-height: 80px;
 }
 
 .header-area .main-nav .nav li:hover a {
@@ -1978,7 +1973,7 @@ Contact Style
   width: 318px;
   height: 119px;
   content: '';
-  z-index: 2;
+  z-index: -1;
 }
 
 .contact-us .contact-us-content::after {

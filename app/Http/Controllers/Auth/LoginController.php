@@ -56,9 +56,8 @@ class LoginController extends Controller
               'email' => 'required|unique:users|email',
               'password' => 'required|confirmed',
               'password_confirmation' => 'required',
-              'role' => 'required'
-
-
+              'role' => 'required',
+              'designation' => 'required',
             ]
             );
         User::create(
@@ -68,6 +67,7 @@ class LoginController extends Controller
                 'email' => $request->email,
                 'password' => \Hash::make($request->password),
                 'role' => $request->role,
+                'designation' => $request->designation, 
             ]
             );
 

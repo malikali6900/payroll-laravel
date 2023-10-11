@@ -149,3 +149,8 @@
     color: #000000;
     margin-bottom: 20px;
 }
+.user_design-table tbody tr td:first-child, .user_design-table thead tr th:first-child{
+	width: 100px;
+	min-width: 100px;
+	max-width: 100px;
+}

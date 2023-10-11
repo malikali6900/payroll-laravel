@@ -57,6 +57,10 @@
                                     <input type="email" class="form-control" id="email" placeholder="Email address"  value="{{ Auth::user()->email }}" readonly class="focus-none">
                                 </div>
                                 <div class="form-group">
+                                    <label for="email">Your Designation</label>
+                                    <input type="text" class="form-control" id="designation" placeholder="Designation"  value="{{ Auth::user()->designation }}" readonly class="focus-none">
+                                </div>
+                                <div class="form-group">
                                     <label for="message">Reset Password</label>
                                     <input type="password" class="form-control" id="reset-password" name="password" placeholder="Reset Password">
                                 </div>

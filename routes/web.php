@@ -11,6 +11,7 @@ Route::post('/', [LoginController::class, 'login']);
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
+
 // Group routes that require authentication
 Route::middleware(['auth'])->group(function () {
     
@@ -34,10 +35,18 @@ Route::middleware(['auth'])->group(function () {
     // For example:
     // Route::get('/dashboard', [DashboardController::class, 'index']);
     // Route::get('/profile', [ProfileController::class, 'index']);
+    Route::post('/updateDesignation/{id}', 'UserController@updateDesignation');
+
+    Route::get('/display-data', 'UserController@displayUserData');
+    Route::get('/employee', function () {
+        return view('employee');
+    });
     Route::get('/profile', function () {
         return view('profile');
     });
-
+    Route::get('/holidays', function () {
+        return view('holidays');
+    });
     // Seperate dashboard for super_admin and other users
     Route::get('/index', function () {
         if (Auth::user()->role === 'super_admin') {
