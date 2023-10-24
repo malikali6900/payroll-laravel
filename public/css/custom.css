@@ -154,3 +154,10 @@
 	min-width: 100px;
 	max-width: 100px;
 }
+.border-collapse th, .border-collapse tr, .border-collapse td{
+	border: 1px solid #cccccc;
+}
+.border-collapse {
+    border-collapse: collapse;
+    border: 1px solid #cccccc;
+}

@@ -28,7 +28,38 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    
+                    <h1>Employee List</h1>
+    <form method="POST" action="{{ url('/employees/update') }}">
+        @csrf
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($employees as $employee)
+                <tr>
+                    <td>{{ $employee->id }}</td>
+                    <td>
+                        <input class="form-control" type="text" name="name[]" value="{{ $employee->name }}">
+                        <input class="form-control" type="hidden" name="id[]" value="{{ $employee->id }}">
+                        @error('name.' . $loop->index)
+                        <span class="text-danger">Name cannot be empty</span>
+                        @enderror
+                    </td>
+                    <td>
+                        <input class="form-control" type="text" name="designation[]" value="{{ $employee->designation }}">
+                    </td>
+                </tr>
+                @endforeach
+                
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Save Updates</button>
+    </form>
 
                 </div>
                 <!-- /.container-fluid -->

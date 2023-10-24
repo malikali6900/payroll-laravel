@@ -38,9 +38,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/updateDesignation/{id}', 'UserController@updateDesignation');
 
     Route::get('/display-data', 'UserController@displayUserData');
-    Route::get('/employee', function () {
-        return view('employee');
+   
+    Route::get('/employee', 'EmployeeController@index');
+    Route::post('/employees/update', 'EmployeeController@update');
+    Route::get('/leave', function () {
+        return view('leave'); // The name 'leave' should match the actual name of your Blade view file (leave.blade.php).
     });
+
     Route::get('/profile', function () {
         return view('profile');
     });
