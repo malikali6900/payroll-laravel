@@ -161,3 +161,23 @@
     border-collapse: collapse;
     border: 1px solid #cccccc;
 }
+.calculated-salary-main{
+	max-width: 700px;
+	margin: auto !important;
+}
+.calculated-sallery label{
+	font-weight: 600;
+	color: #000000;
+}
+.calculated-sallery label, .calculated-sallery p {
+    font-size: 20px;
+	color: #010101ba;
+}
+.calculate-sallery-form{
+    max-width: 700px;
+    margin: auto;
+    margin-top: 70px;
+}
+.text-custom{
+	color: #000;
+}

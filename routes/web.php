@@ -37,13 +37,28 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/profile', [ProfileController::class, 'index']);
     Route::post('/updateDesignation/{id}', 'UserController@updateDesignation');
 
-    Route::get('/display-data', 'UserController@displayUserData');
+    // Route::get('/display-data', 'UserController@displayUserData');
+// routes/web.php
+// routes/web.php
+
+Route::get('/apply-leave', 'LeaveController@applyLeaveForm')->name('apply-leave.form');
+Route::post('/apply-leave', 'LeaveController@applyLeave')->name('apply-leave');
+
+
+Route::get('/roles', 'RoleController@index')->name('roles.index');
+Route::post('/roles/update', 'RoleController@update')->name('roles.update');
+
    
     Route::get('/employee', 'EmployeeController@index');
     Route::post('/employees/update', 'EmployeeController@update');
     Route::get('/leave', function () {
-        return view('leave'); // The name 'leave' should match the actual name of your Blade view file (leave.blade.php).
+        return view('leave'); 
     });
+    Route::get('/calculate-sallery', function () {
+        return view('calculate-sallery'); 
+    });
+
+
 
     Route::get('/profile', function () {
         return view('profile');

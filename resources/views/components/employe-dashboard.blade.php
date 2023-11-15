@@ -73,7 +73,7 @@
     <hr class="sidebar-divider mb-0">
 
     <li class="nav-item">
-        <a class="nav-link" href="/index">
+        <a class="nav-link" href="{{ url('/apply-leave') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Leaves</span></a>
     </li>

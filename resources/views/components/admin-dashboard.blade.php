@@ -64,7 +64,7 @@
 
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/display-data') }}">
+        <a class="nav-link" href="{{ url('/roles') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Designation</span></a>
     </li>
@@ -100,7 +100,7 @@
     <hr class="sidebar-divider mb-0">
 
     <li class="nav-item">
-        <a class="nav-link" href="/index">
+        <a class="nav-link" href="{{ url('/calculate-sallery') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Calculate Sallery</span></a>
     </li>

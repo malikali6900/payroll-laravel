@@ -14,9 +14,11 @@ class AddUserImgToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('user_img')->nullable(); // 'nullable' allows for optional image uploads
+            if (!Schema::hasColumn('users', 'user_img')) {
+                $table->string('user_img')->nullable();
+            }
         });
-    }
+}
 
     /**
      * Reverse the migrations.
