@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\AttendanceController;
+
+
+// Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
+// Route::post('/upload-attendance', [AttendanceController::class, 'upload']);
+Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
+Route::post('/upload-attendance',[AttendanceController::class,'uploadAttendance'])->name('upload-attendance');
 
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [LoginController::class, 'login']);

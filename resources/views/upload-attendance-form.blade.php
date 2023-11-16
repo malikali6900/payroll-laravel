@@ -8,7 +8,7 @@
 
     <!-- Sidebar -->
 
-    @component('components.employe-dashboard')
+    @component('components.admin-dashboard')
     @endcomponent
 
     <!-- End of Sidebar -->
@@ -27,9 +27,8 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
-                    <h1 class="mb-4">Leave Manager</h1>
+                    <h1 class="mb-4">Attendence Manager</h1>
 
                     @if(session('success'))
                     <div class="alert alert-success" role="alert">
@@ -37,25 +36,11 @@
                     </div>
                 @endif
         
-                <form method="POST" action="{{ route('apply-leave') }}">
+                <form action="{{ url('/upload-attendance') }}" method="POST" enctype="multipart/form-data" class="upload-img-form text-center">
                     @csrf
-                    <input type="hidden" name="user_name" value="{{ Auth::user()->name }}">
-                    <div class="form-group">
-                        <label for="start_date">Start Date:</label>
-                        <input type="date" name="start_date" class="form-control" required>
-                    </div>
-        
-                    <div class="form-group">
-                        <label for="end_date">End Date:</label>
-                        <input type="date" name="end_date" class="form-control" required>
-                    </div>
-        
-                    <div class="form-group">
-                        <label for="reason">Reason:</label>
-                        <textarea name="reason" class="form-control" rows="4" required></textarea>
-                    </div>
-        
-                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                    <label for="file">Select Excel file:</label>
+                    <input type="file" name="file" id="file" accept=".xlsx,.xls" class="demo1">
+                    <button type="submit" class="btn btn-primary theme-btn mt-4">Upload</button>
                 </form>
     {{-- <h4 class="text-dark mt-5 pt-3">Note:</h4>
                     <p class="text-dark"><b>super_admin</b> will have all the rights to add and edit emplyees while <b>user</b> have less right just like (View Data and edit his profile only).</p> --}}

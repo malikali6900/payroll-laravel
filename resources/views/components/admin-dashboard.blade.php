@@ -50,14 +50,6 @@
             <span>Register</span></a>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider mb-0">
-
-    <li class="nav-item">
-        <a class="nav-link" href="/index">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Shifts</span></a>
-    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider mb-0">
@@ -95,7 +87,14 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Leaves</span></a>
     </li>
+<!-- Divider -->
+<hr class="sidebar-divider mb-0">
 
+<li class="nav-item">
+    <a class="nav-link" href="/upload-attendance">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Attendence</span></a>
+</li>
     <!-- Divider -->
     <hr class="sidebar-divider mb-0">
 
