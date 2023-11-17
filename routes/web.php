@@ -5,10 +5,22 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\AttendanceController;
-
+use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\SalaryCalculationController;
+use App\Http\Controllers\ShowCalculateSalaryController;
 
 // Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
 // Route::post('/upload-attendance', [AttendanceController::class, 'upload']);
+Route::get('/calculate-salary', [SalaryCalculationController::class, 'showForm'])->name('calculate.salary.form');
+Route::post('/calculate-salary', [SalaryCalculationController::class, 'calculate'])->name('calculate.salary');
+Route::get('/show-calculate-salary', [ShowCalculateSalaryController::class, 'show'])->name('show.calculate.salary');
+
+
+Route::get('/get-salary-details/{id}', 'SalaryController@getSalaryDetails')->name('get-salary-details');
+
+Route::get('/salary/create', [SalaryController::class, 'create'])->name('salary.create');
+Route::post('/salary/store', [SalaryController::class, 'store'])->name('salary.store');
+
 Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
 Route::post('/upload-attendance',[AttendanceController::class,'uploadAttendance'])->name('upload-attendance');
 
@@ -61,9 +73,9 @@ Route::post('/roles/update', 'RoleController@update')->name('roles.update');
     Route::get('/leave', function () {
         return view('leave'); 
     });
-    Route::get('/calculate-sallery', function () {
-        return view('calculate-sallery'); 
-    });
+    // Route::get('/calculate-sallery', function () {
+    //     return view('calculate-sallery'); 
+    // });
 
 
 

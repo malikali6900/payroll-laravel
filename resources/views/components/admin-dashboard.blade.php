@@ -91,15 +91,15 @@
 <hr class="sidebar-divider mb-0">
 
 <li class="nav-item">
-    <a class="nav-link" href="/upload-attendance">
+    <a class="nav-link" href="/salary/create">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Attendence</span></a>
+        <span>Update Salary</span></a>
 </li>
     <!-- Divider -->
     <hr class="sidebar-divider mb-0">
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/calculate-sallery') }}">
+        <a class="nav-link" href="{{ url('/calculate-salary') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Calculate Sallery</span></a>
     </li>
@@ -115,7 +115,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider mb-0">
     <li class="nav-item">
-        <a class="nav-link" href="/index">
+        <a class="nav-link" href="/upload-attendance">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Biometric</span></a>
     </li>
