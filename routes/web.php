@@ -90,7 +90,7 @@ Route::post('/roles/update', 'RoleController@update')->name('roles.update');
         if (Auth::user()->role === 'super_admin') {
             return view('/index'); // get view for super_admin ==> role
         } elseif (Auth::user()->role === 'user') {
-            return view('tables'); // get view for user ==> role
+            return view('/index-user'); // get view for user ==> role
         } else {
             return view('404'); // Handle other roles or scenarios as needed
         }
@@ -114,6 +114,9 @@ Route::get('/', function () {
 });
 Route::get('/welcome', function () {
     return view('welcome');
+});
+Route::get('/tables', function () {
+    return view('tables');
 });
 
 // Route any other url to 404
