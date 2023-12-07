@@ -8,6 +8,8 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\SalaryCalculationController;
 use App\Http\Controllers\ShowCalculateSalaryController;
+use App\Http\Controllers\EmployeeDataController;
+use App\Http\Controllers\UserDashboardController;
 
 // Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
 // Route::post('/upload-attendance', [AttendanceController::class, 'upload']);
@@ -85,12 +87,23 @@ Route::post('/roles/update', 'RoleController@update')->name('roles.update');
     Route::get('/holidays', function () {
         return view('holidays');
     });
+    // Route::middleware(['auth', 'role:super_admin'])->group(function () {
+    //     Route::get('/index', [EmployeeDataController::class, 'index'])->name('dashboard');
+    // });
+    
+    // // Route for user
+    // Route::middleware(['auth', 'role:user'])->group(function () {
+    //     Route::get('/index-user', function () {
+    //         return view('index-user');
+    //     })->name('dashboard.user');
+    // });
+    // Route::get('/index', [EmployeeDataController::class, 'index']);
     // Seperate dashboard for super_admin and other users
     Route::get('/index', function () {
         if (Auth::user()->role === 'super_admin') {
-            return view('/index'); // get view for super_admin ==> role
+            return app(EmployeeDataController::class)->index();
         } elseif (Auth::user()->role === 'user') {
-            return view('/index-user'); // get view for user ==> role
+            return app(UserDashboardController::class)->index(); // get view for user ==> role
         } else {
             return view('404'); // Handle other roles or scenarios as needed
         }

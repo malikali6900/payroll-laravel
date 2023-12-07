@@ -7,8 +7,13 @@
 
     <!-- Sidebar -->
 
+    @if(Auth::user()->role === 'super_admin')
     @component('components.admin-dashboard')
     @endcomponent
+    @elseif(Auth::user()->role === 'user')
+        @component('components.employe-dashboard')
+        @endcomponent
+    @endif
 
     <!-- End of Sidebar -->
 

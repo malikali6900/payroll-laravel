@@ -1,3 +1,6 @@
+.show-password input, .show-password label{
+	cursor: pointer;
+}
 .form-main label{
     color: #000;
     font-size: 20px;

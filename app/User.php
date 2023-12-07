@@ -42,4 +42,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function salary()
+    {
+        return $this->hasOne(Salary::class, 'employee_id');
+    }
+
 }

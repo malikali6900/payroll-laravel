@@ -7,8 +7,13 @@
 
     <!-- Sidebar -->
 
-    @component('components.admin-dashboard')
-    @endcomponent
+    @if(Auth::user()->role === 'super_admin')
+        @component('components.admin-dashboard')
+        @endcomponent
+    @elseif(Auth::user()->role === 'user')
+        @component('components.employe-dashboard')
+        @endcomponent
+    @endif
 
     <!-- End of Sidebar -->
 
@@ -63,6 +68,27 @@
                                 <div class="form-group">
                                     <label for="message">Reset Password</label>
                                     <input type="password" class="form-control" id="reset-password" name="password" placeholder="Reset Password">
+                                    <div class="mt-3 d-flex align-items-center show-password">
+                                        <input type="checkbox" onclick="showPassword()" id="show-pass"> <label for="show-pass" class="ml-2 m-0" style="
+                                        color: #858796;
+                                        font-size: 15px;
+                                        font-weight: 400;
+                                    " >Show Password</label>
+                                    </div>
+                                    <script>
+                                        function showPassword() {
+                                            var passwordInput = document.getElementById('reset-password');
+                                        
+                                            // Check if the checkbox is checked
+                                            if (document.querySelector('input[type="checkbox"]').checked) {
+                                                // Change the type attribute to 'text' to show the password
+                                                passwordInput.type = 'text';
+                                            } else {
+                                                // Change the type attribute back to 'password' to hide the password
+                                                passwordInput.type = 'password';
+                                            }
+                                        }
+                                        </script>
                                 </div>
                                 <div class="form-group">
                                     <label for="message">Confirm Password</label>
