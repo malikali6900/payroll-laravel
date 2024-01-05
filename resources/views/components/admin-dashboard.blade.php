@@ -105,19 +105,25 @@
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider mb-0">
+    {{-- <hr class="sidebar-divider mb-0">
 
     <li class="nav-item">
         <a class="nav-link" href="/index">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Generate Report</span></a>
-    </li>
+    </li> --}}
     <!-- Divider -->
     <hr class="sidebar-divider mb-0">
     <li class="nav-item">
         <a class="nav-link" href="/upload-attendance">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Biometric</span></a>
+    </li>
+    <hr class="sidebar-divider mb-0">
+    <li class="nav-item">
+        <a class="nav-link" href="/generate-report">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Generate Report</span></a>
     </li>
 
     <!-- Divider -->

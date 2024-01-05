@@ -84,11 +84,11 @@
     <!-- Divider -->
     <hr class="sidebar-divider mb-0">
 
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="/index">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Generate Report</span></a>
-    </li>
+    </li> --}}
     <!-- Divider -->
     <hr class="sidebar-divider mb-0">
     <!-- Divider -->

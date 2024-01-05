@@ -47,5 +47,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Salary::class, 'employee_id');
     }
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, 'employee_id');
+    }
 
 }

@@ -23,33 +23,42 @@ class SalaryController extends Controller
     }
 
     public function store(Request $request)
-{
-    // Validation rules
-    $request->validate([
-        'employee_id' => 'required|exists:users,id',
-        'salary_amount' => 'required_if:allowance,bonus',
-        'allowance' => 'required_if:salary_amount,bonus',
-        'bonus' => 'required_if:salary_amount,allowance',
-    ]);
+    {
+        // Validation rules
+        $request->validate([
+            'employee_id' => 'required|exists:users,id',
+            'salary_amount' => 'required_if:allowance,bonus',
+            'allowance' => 'required_if:salary_amount,bonus',
+            'bonus' => 'required_if:salary_amount,allowance',
+            'month' => 'required|string|max:255',
+            'year' => 'required|numeric',
+        ]);
 
-    // Update or create the salary
-    Salary::updateOrCreate(
-        ['employee_id' => $request->input('employee_id')],
-        [
-            'name' => User::find($request->input('employee_id'))->name,
-            'salary_amount' => $request->input('salary_amount', 0),
-            'allowance' => $request->input('allowance', 0),
-            'bonus' => $request->input('bonus', 0),
-        ]
-    );
+        // Find the associated user
+        $user = User::findOrFail($request->input('employee_id'));
 
-    // Store employee details in the session for display in the success message
-    $employee = User::find($request->input('employee_id'));
-    $request->session()->flash('employee_name', $employee->name);
-    $request->session()->flash('salary_amount', $request->input('salary_amount'));
-    $request->session()->flash('allowance', $request->input('allowance'));
-    $request->session()->flash('bonus', $request->input('bonus'));
+        // Update or create the salary
+        $salary = Salary::updateOrCreate(
+            ['employee_id' => $user->id],
+            [
+                'name' => $user->name,
+                'salary_amount' => $request->input('salary_amount', 0),
+                'allowance' => $request->input('allowance', 0),
+                'bonus' => $request->input('bonus', 0),
+                'month' => $request->input('month'), // Updated this line
+                'year' => $request->input('year'),   // Updated this line
+            ]
+        );
 
-    return redirect()->route('salary.create')->with('success', 'Salary, Allowance, and Bonus updated successfully.');
-}
+        // Flash success message to session
+        $request->session()->flash('employee_name', $user->name);
+        $request->session()->flash('salary_amount', $request->input('salary_amount'));
+        $request->session()->flash('allowance', $request->input('allowance'));
+        $request->session()->flash('bonus', $request->input('bonus'));
+        $request->session()->flash('month', $request->input('month'));
+        $request->session()->flash('year', $request->input('year'));
+        
+
+        return redirect()->route('salary.create')->with('success', 'Salary, Allowance, and Bonus updated successfully.');
+    }
 }

@@ -14,36 +14,38 @@ class EmployeeController extends Controller
         return view('employee', compact('employees'));
     }
     public function update(Request $request)
-    {
-        // Validate the request data
-        $request->validate([
-            'name' => 'required|array',
-            'name.*' => 'required', // Ensure all 'name' elements are required
-            'designation' => 'array',
-        ]);
+{
+    // Validate the request data
+    $request->validate([
+        'name' => 'required|array',
+        'name.*' => 'required', // Ensure all 'name' elements are required
+        'designation' => 'array',
+        'id' => 'required|array', // Ensure all 'id' elements are required
+    ]);
 
-        $names = $request->input('name');
-        $designations = $request->input('designation');
+    $names = $request->input('name');
+    $designations = $request->input('designation');
+    $employeeIds = $request->input('id');
 
-        // Loop through the input data and update the employees in the database
-        foreach ($names as $index => $name) {
-            // Ensure 'name' is not empty before updating
-            if (!empty($name)) {
-                $employee = User::find($index + 1); // Assuming employee IDs start from 1
-                if ($employee) {
-                    $employee->name = $name;
-                    // You can also add similar validation for 'designation' if required
-                    if (isset($designations[$index])) {
-                        $employee->designation = $designations[$index];
-                    }
-                    $employee->save();
+    // Loop through the input data and update the employees in the database
+    foreach ($names as $index => $name) {
+        // Ensure 'name' is not empty before updating
+        if (!empty($name)) {
+            $employee = User::find($employeeIds[$index]);
+            if ($employee) {
+                $employee->name = $name;
+                // You can also add similar validation for 'designation' if required
+                if (isset($designations[$index])) {
+                    $employee->designation = $designations[$index];
                 }
+                $employee->save();
             }
         }
-
-        // Redirect back to the employee list or wherever you want
-        return redirect('/employee');
     }
+
+    // Redirect back to the employee list or wherever you want
+    return redirect('/employee');
+}
 
 
 }

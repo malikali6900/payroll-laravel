@@ -1,72 +1,4 @@
-{{-- 
-@extends('layouts.dashboard-layout')
 
-@section('content')
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="{{ asset('datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
-
-   <!-- Page Wrapper -->
-   <div id="wrapper">
-
-    <!-- Sidebar -->
-
-    @component('components.admin-dashboard')
-    @endcomponent
-
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-
-            <!-- Topbar -->
-            @component('components.top-bar')
-            @endcomponent
-            <!-- End of Topbar -->
-
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright © 2023 Giga Creatives Organization. All rights reserved.</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-@endsection
-
-    <!-- Page level plugins -->
-    <script src="{{ asset('datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('datatables/dataTables.bootstrap4.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script> --}}
 
 
     <link href="{{ asset('fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -75,6 +7,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <title>@yield('title', 'GiGa Pay')</title>
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this page -->
@@ -106,12 +39,12 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Employees List</h1>
                     
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables </h6>
+                            <h6 class="m-0 font-weight-bold text-primary">List Dataset </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

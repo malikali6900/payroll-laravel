@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Payroll') }}</title>
+    <title>@yield('title', 'GiGa Pay')</title>
+    {{-- <title>{{ config('app.name', 'Payroll') }}</title> --}}
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Styles -->
@@ -59,6 +60,9 @@
  
      <!-- Core plugin JavaScript-->
      <script src="{{ asset('jquery-easing/jquery.easing.min.js') }}"></script>
+ 
+     <!-- Custom scripts for all pages-->
+     <script src="{{ asset('js/jquery.js') }}"></script>
  
      <!-- Custom scripts for all pages-->
      <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>

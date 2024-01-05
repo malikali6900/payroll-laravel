@@ -31,7 +31,7 @@
           <div class="row">
             <div class="col-lg-6  align-self-center">
               <div class="section-heading">
-                <h6>Contact Us</h6>
+                <h6>Register or Add Employee</h6>
                 <h2>Feel free to contact us anytime</h2>
                 <p>Giga Creatives Inc. is a trusted, dexterously handled software development company. Since embarking its presence in the digital market<br>Giga Creative Inc. is offering a wide range of IT solution for the past 5 years at Giga Creative Inc. We endeavor to develop innovative, creative and customized services. </p>
               </div>

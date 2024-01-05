@@ -227,7 +227,7 @@
     </div>
   </div>
 
-  <section class="section courses" id="courses" >
+  {{-- <section class="section courses" id="courses" >
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -332,7 +332,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <div class="section fun-facts">
     <div class="container">
@@ -371,7 +371,7 @@
     </div>
   </div>
 
-  <div class="team section" id="team">
+  {{-- <div class="team section" id="team">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6">
@@ -432,7 +432,7 @@
         </div>
       </div>
     </div>
-  </div> 
+  </div>  --}}
 
   <div class="section testimonials">
     <div class="container">
@@ -476,7 +476,7 @@
     </div>
   </div>
 
-  <div class="section events" id="events">
+  {{-- <div class="section events" id="events">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -583,7 +583,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   {{-- <div class="contact-us section" id="contact">
     <div class="container">

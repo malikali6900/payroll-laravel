@@ -7,8 +7,14 @@
 
     <!-- Sidebar -->
 
+    @if(Auth::user()->role === 'super_admin')
     @component('components.admin-dashboard')
     @endcomponent
+    @elseif(Auth::user()->role === 'user')
+        @component('components.employe-dashboard')
+        @endcomponent
+    @endif
+
 
     <!-- End of Sidebar -->
 
@@ -28,8 +34,13 @@
                 <div class="container-fluid">
 
                     @if(isset($user, $salary, $allowances, $bonuses, $deductions, $totalSalary))
-                        <h2 class="text-custom mt-5 mb-4">Calculated Salary</h2>
-                        <table class="table border-collapse text-dark">
+                    <div class="row justify-content-center left-btn-row">
+                        <h2 class="text-custom mt-5 mb-4 col-6">Calculated Salary</h2>
+                        <div class="col-6 text-right">
+                            <button id="exportButton" class="btn btn-primary">Export to Excel</button>
+                        </div>
+                    </div>
+                        <table class="table border-collapse text-dark" id="individual-salary">
                             <thead>
                                 <tr>
                                     <th class="text-custom">Description</th>
@@ -63,6 +74,22 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                document.getElementById('exportButton').addEventListener('click', function() {
+                                    exportTableToExcel('individual-salary', 'exported_data');
+                                });
+                        
+                                function exportTableToExcel(tableId, filename) {
+                                    var table = document.getElementById(tableId);
+                                    var ws = XLSX.utils.table_to_sheet(table);
+                                    var wb = XLSX.utils.book_new();
+                                    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+                                    XLSX.writeFile(wb, filename + '.xlsx');
+                                }
+                            });
+                        </script>
                     @endif
                 <!-- /.container-fluid -->
 

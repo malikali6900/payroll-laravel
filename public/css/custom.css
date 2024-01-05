@@ -184,3 +184,26 @@
 .text-custom{
 	color: #000;
 }
+.custom-form{
+	max-width: 800px;
+	margin: auto;
+}
+.show-salaries label{
+	display: block;
+}
+.show-salaries{
+	text-align: center;
+}
+.show-salaries label{
+	font-size: 23px;
+}
+.show-salaries label + .form-check{
+	margin-right: 30px !important;
+}
+.show-salaries .form-check{
+	display: inline-block;
+	text-align: left;
+}
+.show-salaries .form-check label {
+	font-size: 18px;
+}

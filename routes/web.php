@@ -10,6 +10,9 @@ use App\Http\Controllers\SalaryCalculationController;
 use App\Http\Controllers\ShowCalculateSalaryController;
 use App\Http\Controllers\EmployeeDataController;
 use App\Http\Controllers\UserDashboardController;
+use App\Http\Controllers\GenerateReportController;
+
+
 
 // Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
 // Route::post('/upload-attendance', [AttendanceController::class, 'upload']);
@@ -22,6 +25,11 @@ Route::get('/get-salary-details/{id}', 'SalaryController@getSalaryDetails')->nam
 
 Route::get('/salary/create', [SalaryController::class, 'create'])->name('salary.create');
 Route::post('/salary/store', [SalaryController::class, 'store'])->name('salary.store');
+
+Route::get('/generate-report', [GenerateReportController::class, 'showForm'])->name('generate.report.form');
+Route::post('/generate-report', [GenerateReportController::class, 'generate'])->name('generate.report');
+Route::post('/generate-report', [GenerateReportController::class, 'showAllSalaries'])->name('show.all.salaries');
+
 
 Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
 Route::post('/upload-attendance',[AttendanceController::class,'uploadAttendance'])->name('upload-attendance');
@@ -52,10 +60,7 @@ Route::middleware(['auth'])->group(function () {
         }
     })->name('forgot-password');
 
-    // Add more authenticated routes here
-    // For example:
-    // Route::get('/dashboard', [DashboardController::class, 'index']);
-    // Route::get('/profile', [ProfileController::class, 'index']);
+    
     Route::post('/updateDesignation/{id}', 'UserController@updateDesignation');
 
     // Route::get('/display-data', 'UserController@displayUserData');

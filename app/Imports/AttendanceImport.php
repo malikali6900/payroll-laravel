@@ -17,7 +17,9 @@ class AttendanceImport implements ToModel
         $name = $row[1];
         $totalPresent = $row[2]; // Change this to the appropriate index in the $row array
         $totalAbsent = $row[3]; // Change this to the appropriate index in the $row array
-        $totalDays = $row[4]; // Change this to the appropriate index in the $row array
+        $totalDays = $row[4];   // Change this to the appropriate index in the $row array
+        $month = $row[5];
+        $year = $row[6]; 
 
         return new \App\Attendance([
             'employee_id' => $employeeId,
@@ -25,6 +27,8 @@ class AttendanceImport implements ToModel
             'total_present' => $totalPresent,
             'total_absent' => $totalAbsent,
             'total_days' => $totalDays,
+            'month' => $month,
+            'year' => $year,
         ]);
     }
 

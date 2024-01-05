@@ -28,7 +28,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <h1 class="mb-4">Attendence Manager</h1>
+                    <h1 class="mb-4 text-center pb-4 mt-4 pt-4">Attendence Manager</h1>
 
                     @if(session('success'))
                     <div class="alert alert-success" role="alert">

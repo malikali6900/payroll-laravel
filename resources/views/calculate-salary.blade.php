@@ -32,22 +32,27 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+                    <h1 class="mb-4 text-center pb-4 mt-4 pt-4">Calculate Sallary</h1>
                     @if(session('success'))
                         <div class="alert alert-success" role="alert">
                             {{ session('success') }}
                         </div>
                     @endif
 
-                    <form method="post" action="{{ route('calculate.salary') }}">
+                    <form method="post" action="{{ route('calculate.salary') }}" class="custom-form">
                         @csrf
 
                         <div class="form-group">
                             <label for="user_id">Select Employee</label>
                             <select id="user_id" name="user_id" class="form-control" onchange="updateEmployeeId()">
                                 <option value="">Select Employee</option>
-                                @foreach($salaries as $salary)
-                                    <option value="{{ $salary->employee_id }}">{{ $salary->name }}</option>
-                                @endforeach
+                                @if(auth()->user()->role === 'super_admin')
+                                    @foreach($salaries as $salary)
+                                        <option value="{{ $salary->employee_id }}">{{ $salary->name }}</option>
+                                    @endforeach
+                                @else
+                                    <option value="{{ auth()->user()->id }}">{{ auth()->user()->name }}</option>
+                                @endif
                             </select>
                         </div>
 
