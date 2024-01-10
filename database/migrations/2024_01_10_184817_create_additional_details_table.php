@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AAddMonthAndYearToAttendancesTable extends Migration
+class CreateAdditionalDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AAddMonthAndYearToAttendancesTable extends Migration
      */
     public function up()
     {
-        Schema::table('attendances', function (Blueprint $table) {
-            $table->integer('month');
-            $table->integer('year');
+        Schema::create('additional_details', function (Blueprint $table) {
+            $table->id();
+            $table->decimal('total_earn', 10, 2)->default(0.00);
+            $table->decimal('total_spent', 10, 2)->default(0.00);
+            $table->timestamps();
         });
     }
 
@@ -26,9 +28,6 @@ class AAddMonthAndYearToAttendancesTable extends Migration
      */
     public function down()
     {
-        Schema::table('attendances', function (Blueprint $table) {
-            $table->dropColumn('month');
-            $table->dropColumn('year');
-        });
+        Schema::dropIfExists('additional_details');
     }
 }

@@ -15,7 +15,7 @@ class LoginController extends Controller
     {
         if (Auth::check()) {
             // User is already authenticated, redirect to tables page
-            return redirect('/index');
+            return redirect('/index-admin');
         }
     
         return view('login');
@@ -35,7 +35,7 @@ class LoginController extends Controller
 
         if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
             // Authentication successful, redirect to the tables page
-            return redirect('/index');
+            return redirect('/index-admin');
         } else {
             // Authentication failed, redirect back with errors
             return redirect()->back()->withErrors(['message' => 'Invalid credentials']);
@@ -73,7 +73,7 @@ class LoginController extends Controller
 
             if (Auth::attempt($request->only('email','password'))) {
             // Authentication passed
-            return redirect('/index'); // Replace '/dashboard' with the desired destination URL after successful login
+            return redirect('/index-admin'); // Replace '/dashboard' with the desired destination URL after successful login
             } else {
                 // Authentication failed
                 return back()->withErrors(['message' => 'Invalid credentials']);

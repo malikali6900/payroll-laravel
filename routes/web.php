@@ -13,6 +13,13 @@ use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\GenerateReportController;
 
 
+Route::get('/update-total-earn', 'EmployeeDataController@showUpdateTotalEarnForm')->name('show.update.total.earn');
+Route::match(['post', 'put'], '/update-total-earn', 'EmployeeDataController@updateTotalEarn')->name('update.total.earn');
+Route::match(['post', 'put'], '/update-total-spent', 'EmployeeDataController@updateTotalSpent')->name('update.total.spent');
+Route::match(['post', 'put'], '/update-total-salaries', 'EmployeeDataController@updateTotalSalaries')->name('update.total.salaries');
+
+
+
 
 // Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
 // Route::post('/upload-attendance', [AttendanceController::class, 'upload']);
@@ -104,7 +111,7 @@ Route::post('/roles/update', 'RoleController@update')->name('roles.update');
     // });
     // Route::get('/index', [EmployeeDataController::class, 'index']);
     // Seperate dashboard for super_admin and other users
-    Route::get('/index', function () {
+    Route::get('/index-admin', function () {
         if (Auth::user()->role === 'super_admin') {
             return app(EmployeeDataController::class)->index();
         } elseif (Auth::user()->role === 'user') {

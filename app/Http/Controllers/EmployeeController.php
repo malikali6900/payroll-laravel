@@ -11,7 +11,7 @@ class EmployeeController extends Controller
     {
         $employees = User::all(); // Assuming you have a User model
 
-        return view('employee', compact('employees'));
+        return view('index', compact('employees'));
     }
     public function update(Request $request)
 {

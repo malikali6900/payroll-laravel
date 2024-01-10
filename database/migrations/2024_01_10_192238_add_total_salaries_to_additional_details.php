@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AAddMonthAndYearToAttendancesTable extends Migration
+class AddTotalSalariesToAdditionalDetails extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AAddMonthAndYearToAttendancesTable extends Migration
      */
     public function up()
     {
-        Schema::table('attendances', function (Blueprint $table) {
-            $table->integer('month');
-            $table->integer('year');
+        Schema::table('additional_details', function (Blueprint $table) {
+            $table->decimal('total_salaries', 10, 2)->default(0);
         });
     }
 
@@ -26,9 +25,8 @@ class AAddMonthAndYearToAttendancesTable extends Migration
      */
     public function down()
     {
-        Schema::table('attendances', function (Blueprint $table) {
-            $table->dropColumn('month');
-            $table->dropColumn('year');
+        Schema::table('additional_details', function (Blueprint $table) {
+            $table->dropColumn('total_salaries');
         });
     }
 }

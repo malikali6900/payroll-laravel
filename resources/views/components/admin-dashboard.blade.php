@@ -33,10 +33,9 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
+    
     <li class="nav-item">
-        <a class="nav-link" href="/index">
+        <a class="nav-link test" href="/index-admin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -78,7 +77,20 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Holidays</span></a>
     </li>
-
+<!-- Nav Item - Dashboard -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+        aria-expanded="true" aria-controls="collapseThree">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Other Details</span>
+    </a>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Details Update</h6>
+            <a class="collapse-item" href="{{ url('/update-total-earn') }}">Update Earnings</a>
+        </div>
+    </div>
+</li>
     <!-- Divider -->
     <hr class="sidebar-divider mb-0">
 
