@@ -80,7 +80,7 @@
                         {{-- <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required=""> --}}
                       </fieldset>
                       <div class="mb-4">
-                        <a class="small text-white" href="{{ route('forgot-password') }}">Forgot Password?</a>
+                        {{-- <a class="small text-white" href="{{ route('forgot-password') }}">Forgot Password?</a> --}}
                     </div>
                     </div>
                     <div class="col-lg-12">

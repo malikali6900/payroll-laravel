@@ -38,6 +38,7 @@
                         <h2 class="text-custom mt-5 mb-4 col-6">Calculated Salary</h2>
                         <div class="col-6 text-right">
                             <button id="exportButton" class="btn btn-primary">Export to Excel</button>
+                           <a href="{{ route('salary.download.pdf', ['id' => $user->id]) }}" target="_blank" class="btn btn-primary">Download Salary Slip PDF</a>
                         </div>
                     </div>
                         <table class="table border-collapse text-dark" id="individual-salary">

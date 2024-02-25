@@ -19,6 +19,7 @@ Route::match(['post', 'put'], '/update-total-spent', 'EmployeeDataController@upd
 Route::match(['post', 'put'], '/update-total-salaries', 'EmployeeDataController@updateTotalSalaries')->name('update.total.salaries');
 
 
+Route::get('/salary/{id}/download-pdf', [SalaryCalculationController::class, 'downloadSalarySlipPDF'])->name('salary.download.pdf');
 
 
 // Route::get('/upload-attendance', [AttendanceController::class, 'showForm']);
